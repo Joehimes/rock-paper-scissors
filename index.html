@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Rock Paper Scissors</title>
+  </head>
+  <body>
+    <script>
+
+      let plays = ["rock", "paper", "scissors"];
+
+      function computerPlay() {
+        let choice = Math.floor(Math.random() * 3);
+        return plays[choice];
+      }
+
+      function playerPlay() {
+        let choice =  prompt("Rock, Paper, or Scissors").toLowerCase();
+        console.log(plays.includes(choice))
+        if (!plays.includes(choice)) {
+          return "That is not a valid option!";
+        } else {
+          return choice;
+        };
+      };
+
+      function play(playerSelection, computerSelection) {
+        if (playerSelection === "rock" && computerSelection === "paper") {
+          return "You lose! Paper beats Rock!";
+        } else if (playerSelection === "rock" && computerSelection === "scissors") {
+          return "You win! Rock beats Scissors!";
+        } else if (playerSelection === "paper" && computerSelection === "rock") {
+          return "You win! Paper beats Rock!";
+        } else if (playerSelection === "paper" && computerSelection === "scissors") {
+          return "You lose! Scissors beats Paper!";
+        } else if (playerSelection === "scissors" && computerSelection === "rock") {
+          return "You lose! Scissors beats Rock";
+        } else if (playerSelection === "scissors" && computerSelection === "paper") {
+          return "You win! Scissors beats Paper!";
+        } else {
+          return "Tie!"
+        }
+      };
+
+    </script>
+  </body>
+</html>
